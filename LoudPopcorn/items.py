@@ -11,8 +11,4 @@ class OdeonCinemaItem(Item):
     lng = Field()
     lat = Field()
     chain_id = Field()
-
-
-class OdeonFilmTimesItem(Item):
-	chain_id 	= Field()
 	times 		= Field()
