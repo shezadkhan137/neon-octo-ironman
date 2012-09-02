@@ -3,7 +3,7 @@ from scrapy.selector import HtmlXPathSelector
 from scrapy.http import Request
 import urlparse
 from geopy import geocoders
-from LoudPopcorn.items import OdeonCinemaItem, OdeonFilmTimesItem
+from LoudPopcorn.items import OdeonCinemaItem
 from LoudPopcorn.helper_functions import GetOdeonId
 
 class DmozSpider(BaseSpider):
@@ -14,6 +14,7 @@ class DmozSpider(BaseSpider):
     g               = geocoders.Google(domain='maps.google.co.uk')
     y               = geocoders.Yahoo('NbD5Hw6e')
     items           = []
+    chain           = "Odeon"
 
     def parse(self, response):
         hxs            = HtmlXPathSelector(response)
@@ -27,13 +28,13 @@ class DmozSpider(BaseSpider):
         
         hxs     = HtmlXPathSelector(response)
 
-        #item = self.GetCinemaAddress(hxs)
-        item    = self.GetTimeListings(hxs, response)
+        item    = self.GetCinemaAddress(hxs, response)
+        item    = self.GetTimeListings(hxs, response, item)
 
         yield item
 
 
-    def GetCinemaAddress(self, hxs):
+    def GetCinemaAddress(self, hxs, response):
 
         address        = hxs.select('//div[@class="selectedCinema"]').select('child::p[position()=3]').select('child::br').extract()
         address_list   = []
@@ -46,7 +47,7 @@ class DmozSpider(BaseSpider):
 
         try:
             item = OdeonCinemaItem()
-            address, (lng, lat) = self.y.geocode(' '.join(address_list))
+            address, (lat, lng) = self.y.geocode(' '.join(address_list))
         
         except ValueError:
             
@@ -66,7 +67,7 @@ class DmozSpider(BaseSpider):
 
         return item
 
-    def GetTimeListings(self, hxs, response):
+    def GetTimeListings(self, hxs, response, item):
         films       = hxs.select('//div[@class="filmdiv"]')
         films_dict  = {}
         
@@ -91,9 +92,6 @@ class DmozSpider(BaseSpider):
 
             films_dict[film_name]   =  [film_id, days_dict]
 
-        
-        item                = OdeonFilmTimesItem()
-        item['chain_id']    = GetOdeonId(response.url)
         item['times']       = films_dict
 
         return item

@@ -6,9 +6,9 @@
 from scrapy.item import Item, Field
 
 class OdeonCinemaItem(Item):
-    name = Field()
-    address = Field()
-    lng = Field()
-    lat = Field()
-    chain_id = Field()
-	times 		= Field()
+	name = Field()
+	address = Field()
+	lng = Field()
+	lat = Field()
+	chain_id = Field()
+	times = Field()
