@@ -1,0 +1,567 @@
+2012-09-03 00:49:28+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/fanatic/film_times/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 31, in parse_cinema
+	    item    = self.GetCinemaAddress(hxs, response)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 61, in GetCinemaAddress
+	    item['name']        = address_list[0]
+	exceptions.IndexError: list index out of range
+	
+2012-09-03 00:49:40+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/fanatic/film_times/s21/Whiteleys/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 32, in parse_cinema
+	    item    = self.GetTimeListings(hxs, response, item)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 76, in GetTimeListings
+	    film_name   = film.select('div[contains(@class,"filmblock")]/div[@class="rightside"]/div[@class="filminfos"]').select('child::h1').select('child::a//text()').extract()[0]
+	exceptions.IndexError: list index out of range
+	
+2012-09-03 00:49:45+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/thelounge/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 31, in parse_cinema
+	    item    = self.GetCinemaAddress(hxs, response)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 61, in GetCinemaAddress
+	    item['name']        = address_list[0]
+	exceptions.IndexError: list index out of range
+	
+2012-09-03 00:49:51+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/fanatic/west-thurrock/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 31, in parse_cinema
+	    item    = self.GetCinemaAddress(hxs, response)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 61, in GetCinemaAddress
+	    item['name']        = address_list[0]
+	exceptions.IndexError: list index out of range
+	
+2012-09-03 00:50:07+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/fanatic/film_times/s126/South_Woodford/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 31, in parse_cinema
+	    item    = self.GetCinemaAddress(hxs, response)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 50, in GetCinemaAddress
+	    address, (lat, lng) = self.y.geocode(' '.join(address_list))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/geopy/geocoders/yahoo.py", line 39, in geocode
+	    return self.geocode_url(url, exactly_one)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/geopy/geocoders/yahoo.py", line 42, in geocode_url
+	    page = urlopen(url)
+	  File "/usr/lib/python2.7/urllib2.py", line 126, in urlopen
+	    return _opener.open(url, data, timeout)
+	  File "/usr/lib/python2.7/urllib2.py", line 406, in open
+	    response = meth(req, response)
+	  File "/usr/lib/python2.7/urllib2.py", line 519, in http_response
+	    'http', request, response, code, msg, hdrs)
+	  File "/usr/lib/python2.7/urllib2.py", line 444, in error
+	    return self._call_chain(*args)
+	  File "/usr/lib/python2.7/urllib2.py", line 378, in _call_chain
+	    result = func(*args)
+	  File "/usr/lib/python2.7/urllib2.py", line 527, in http_error_default
+	    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
+	urllib2.HTTPError: HTTP Error 500: Server Error
+	
+2012-09-03 00:50:13+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/thelounge/films/film-times>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 31, in parse_cinema
+	    item    = self.GetCinemaAddress(hxs, response)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 61, in GetCinemaAddress
+	    item['name']        = address_list[0]
+	exceptions.IndexError: list index out of range
+	
+2012-09-03 00:50:18+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/fanatic/film_times/s117/Panton_St/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 31, in parse_cinema
+	    item    = self.GetCinemaAddress(hxs, response)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 50, in GetCinemaAddress
+	    address, (lat, lng) = self.y.geocode(' '.join(address_list))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/geopy/geocoders/yahoo.py", line 39, in geocode
+	    return self.geocode_url(url, exactly_one)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/geopy/geocoders/yahoo.py", line 42, in geocode_url
+	    page = urlopen(url)
+	  File "/usr/lib/python2.7/urllib2.py", line 126, in urlopen
+	    return _opener.open(url, data, timeout)
+	  File "/usr/lib/python2.7/urllib2.py", line 406, in open
+	    response = meth(req, response)
+	  File "/usr/lib/python2.7/urllib2.py", line 519, in http_response
+	    'http', request, response, code, msg, hdrs)
+	  File "/usr/lib/python2.7/urllib2.py", line 444, in error
+	    return self._call_chain(*args)
+	  File "/usr/lib/python2.7/urllib2.py", line 378, in _call_chain
+	    result = func(*args)
+	  File "/usr/lib/python2.7/urllib2.py", line 527, in http_error_default
+	    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
+	urllib2.HTTPError: HTTP Error 500: Server Error
+	
+2012-09-03 00:50:22+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/fanatic/film_times/s13/Norwich/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 32, in parse_cinema
+	    item    = self.GetTimeListings(hxs, response, item)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 76, in GetTimeListings
+	    film_name   = film.select('div[contains(@class,"filmblock")]/div[@class="rightside"]/div[@class="filminfos"]').select('child::h1').select('child::a//text()').extract()[0]
+	exceptions.IndexError: list index out of range
+	
+2012-09-03 00:50:31+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/fanatic/film_times/s110/Mansfield/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 32, in parse_cinema
+	    item    = self.GetTimeListings(hxs, response, item)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 87, in GetTimeListings
+	    time_link   = time.select('a/@href').extract()[0]
+	exceptions.IndexError: list index out of range
+	
+2012-09-03 00:51:00+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/fanatic/cinemas_imax_london/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 31, in parse_cinema
+	    item    = self.GetCinemaAddress(hxs, response)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 61, in GetCinemaAddress
+	    item['name']        = address_list[0]
+	exceptions.IndexError: list index out of range
+	
+2012-09-03 00:51:39+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/fanatic/film_times/s170/Belfast/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 32, in parse_cinema
+	    item    = self.GetTimeListings(hxs, response, item)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 76, in GetTimeListings
+	    film_name   = film.select('div[contains(@class,"filmblock")]/div[@class="rightside"]/div[@class="filminfos"]').select('child::h1').select('child::a//text()').extract()[0]
+	exceptions.IndexError: list index out of range
+	
+2012-09-03 01:42:22+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/fanatic/film_times/s21/Whiteleys/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 32, in parse_cinema
+	    item    = self.GetTimeListings(hxs, response, item)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 76, in GetTimeListings
+	    film_name   = film.select('div[contains(@class,"filmblock")]/div[@class="rightside"]/div[@class="filminfos"]').select('child::h1').select('child::a//text()').extract()[0]
+	exceptions.IndexError: list index out of range
+	
+2012-09-03 01:43:57+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/fanatic/film_times/s126/South_Woodford/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 31, in parse_cinema
+	    item    = self.GetCinemaAddress(hxs, response)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 50, in GetCinemaAddress
+	    address, (lat, lng) = self.y.geocode(' '.join(address_list))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/geopy/geocoders/yahoo.py", line 39, in geocode
+	    return self.geocode_url(url, exactly_one)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/geopy/geocoders/yahoo.py", line 42, in geocode_url
+	    page = urlopen(url)
+	  File "/usr/lib/python2.7/urllib2.py", line 126, in urlopen
+	    return _opener.open(url, data, timeout)
+	  File "/usr/lib/python2.7/urllib2.py", line 406, in open
+	    response = meth(req, response)
+	  File "/usr/lib/python2.7/urllib2.py", line 519, in http_response
+	    'http', request, response, code, msg, hdrs)
+	  File "/usr/lib/python2.7/urllib2.py", line 444, in error
+	    return self._call_chain(*args)
+	  File "/usr/lib/python2.7/urllib2.py", line 378, in _call_chain
+	    result = func(*args)
+	  File "/usr/lib/python2.7/urllib2.py", line 527, in http_error_default
+	    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
+	urllib2.HTTPError: HTTP Error 500: Server Error
+	
+2012-09-03 01:44:28+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/fanatic/west-thurrock/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 31, in parse_cinema
+	    item    = self.GetCinemaAddress(hxs, response)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 61, in GetCinemaAddress
+	    item['name']        = address_list[0]
+	exceptions.IndexError: list index out of range
+	
+2012-09-03 01:46:20+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/fanatic/film_times/s13/Norwich/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 32, in parse_cinema
+	    item    = self.GetTimeListings(hxs, response, item)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 76, in GetTimeListings
+	    film_name   = film.select('div[contains(@class,"filmblock")]/div[@class="rightside"]/div[@class="filminfos"]').select('child::h1').select('child::a//text()').extract()[0]
+	exceptions.IndexError: list index out of range
+	
+2012-09-03 01:48:26+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/thelounge/films/film-times>: Connection was closed cleanly.
+2012-09-03 02:01:14+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/fanatic/film_times/s170/Belfast/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 32, in parse_cinema
+	    item    = self.GetTimeListings(hxs, response, item)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 76, in GetTimeListings
+	    film_name   = film.select('div[contains(@class,"filmblock")]/div[@class="rightside"]/div[@class="filminfos"]').select('child::h1').select('child::a//text()').extract()[0]
+	exceptions.IndexError: list index out of range
+	
+2012-09-03 02:01:16+0100 [odeon] ERROR: Error processing {'address': u'Waterloo, London, United Kingdom, London, United Kingdom',
+	 'chain_id': 's211',
+	 'lat': 51.50176,
+	 'lng': -0.109439,
+	 'name': u'ODEON BFI IMAX',
+	 'times': {u'Born To Be Wild IMAX 3D': [u'f13529', {}],
+	           u'Lord Of The Rings Trilogy': [u'f14152',
+	                                          {u'Sat 29/09': [[u'23:59',
+	                                                           u'/fanatic/booking-interactive/s211/pA0100000023WXAZMLB/']]}],
+	           u'Raiders Of The Lost Ark IMAX': [u'f100433', {}],
+	           u'The Dark Knight Rises IMAX': [u'f100364', {}],
+	           u'The Met Opera - Aida': [u'f14070', {}],
+	           u'The Met Opera - Francesca Da Rimini': [u'f14075', {}],
+	           u'The Met Opera - Giulio Cesare': [u'f14076', {}],
+	           u"The Met Opera - L'Elisir d'Amore": [u'f14065', {}],
+	           u'The Met Opera - La Clemenzia Di Tito': [u'f14068', {}],
+	           u'The Met Opera - Les Troyens': [u'f14071', {}],
+	           u'The Met Opera - Maria Stuarda': [u'f14072', {}],
+	           u'The Met Opera - Otello': [u'f14066', {}],
+	           u'The Met Opera - Parsifal': [u'f14074', {}],
+	           u'The Met Opera - Rigoletto': [u'f14073', {}],
+	           u'The Met Opera - The Tempest': [u'f14067', {}],
+	           u'The Met Opera - Un Ballo In Maschera': [u'f14069', {}],
+	           u'Under The Sea IMAX 3D': [u'f11794', {}]}}
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/middleware.py", line 60, in _process_chain
+	    return process_chain(self.methods[methodname], obj, *args)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 65, in process_chain
+	    d.callback(input)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 368, in callback
+	    self._startRunCallbacks(result)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 464, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 551, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/pipelines.py", line 65, in process_item
+	    t = self.ProcessShowingTime(day, showing_times)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/pipelines.py", line 82, in ProcessShowingTime
+	    weekday = weekdays[day]
+	exceptions.KeyError: u'Sat 29/09'
+	
+2012-09-03 02:19:16+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s20/Trafford_Centre/>: User timeout caused connection failure.
+2012-09-03 02:19:16+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s19/Swansea/>: Connection was closed cleanly.
+2012-09-03 02:19:16+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s27/Telford/>: Connection was closed cleanly.
+2012-09-03 02:19:16+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s135/Tottenham_Court_Rd/>: Connection was closed cleanly.
+2012-09-03 02:19:16+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s30/Tamworth/>: Connection was closed cleanly.
+2012-09-03 02:19:16+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/thelounge/>: Connection was closed cleanly.
+2012-09-03 02:19:16+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s132/Swiss_Cottage/>: Connection was closed cleanly.
+2012-09-03 02:19:16+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s134/Taunton/>: Connection was closed cleanly.
+2012-09-03 02:24:05+0100 [odeon] ERROR: Spider error processing <GET http://www.odeon.co.uk/fanatic/cinemas_imax_london/>
+	Traceback (most recent call last):
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/base.py", line 800, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 602, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/twisted/internet/task.py", line 479, in _oneWorkUnit
+	    result = self._iterator.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/offsite.py", line 24, in process_spider_output
+	    for x in result:
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/referer.py", line 14, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/urllength.py", line 32, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/venv/local/lib/python2.7/site-packages/scrapy/contrib/spidermiddleware/depth.py", line 56, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 31, in parse_cinema
+	    item    = self.GetCinemaAddress(hxs, response)
+	  File "/home/shaz/Documents/Development/Python-Dev/LoudPopcorn/LoudPopcornScrapers/LoudPopcorn/spiders/odeon_spider.py", line 61, in GetCinemaAddress
+	    item['name']        = address_list[0]
+	exceptions.IndexError: list index out of range
+	
+2012-09-03 02:25:41+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s94/Hastings/>: Connection was closed cleanly.
+2012-09-03 02:25:41+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s61/Aylesbury/>: User timeout caused connection failure.
+2012-09-03 02:25:41+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s110/Mansfield/>: Connection was closed cleanly.
+2012-09-03 02:25:41+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s93/Harrogate/>: Connection was closed cleanly.
+2012-09-03 02:25:41+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s82/Coventry/>: Connection was closed cleanly.
+2012-09-03 02:25:41+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s77/Chelmsford/>: Connection was closed cleanly.
+2012-09-03 02:25:41+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s151/Chatham/>: Connection was closed cleanly.
+2012-09-03 02:25:41+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s80/Colchester/>: Connection was closed cleanly.
+2012-09-03 02:25:41+0100 [odeon] ERROR: Error downloading <GET http://www.odeon.co.uk/fanatic/film_times/s62/Ayr/>: Connection was closed cleanly.

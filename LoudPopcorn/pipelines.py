@@ -78,10 +78,11 @@ class ProcessFilmTimes(object):
 		self.session.commit()
 
 	def ProcessShowingTime(self, day, showing_times):
-		weekdays = {"Sunday":0, "Monday":1, "Tuesday":2, "Wednesday":3, "Thursday":4, "Friday":5, "Saturday":6}
+		weekdays = {"Sunday":6, "Monday":0, "Tuesday":1, "Wednesday":2, "Thursday":3, "Friday":4, "Saturday":5}
 		weekday = weekdays[day]
 		today_date = datetime.date.today()
-		showing_day = today_date+datetime.timedelta(weekday-today_date.weekday())
+		day_diff = weekday-today_date.weekday()
+		showing_day = today_date+datetime.timedelta(days=day_diff%7)
 		showing_list = []
 		for showing_time, link in showing_times:
 			h, m = showing_time.split(":")

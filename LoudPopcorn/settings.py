@@ -13,8 +13,12 @@ SPIDER_MODULES = ['LoudPopcorn.spiders']
 NEWSPIDER_MODULE = 'LoudPopcorn.spiders'
 USER_AGENT = '%s/%s' % (BOT_NAME, BOT_VERSION)
 
-# ITEM_PIPELINES = [
-#     'LoudPopcorn.pipelines.ProcessCinemaPipeline',
-#     'LoudPopcorn.pipelines.ProcessFilmTimes',
-# ]
+LOG_ENABLED = True
+LOG_LEVEL = "WARNING"
+LOG_FILE = "Scraper.log"
+
+ITEM_PIPELINES = [
+    'LoudPopcorn.pipelines.ProcessCinemaPipeline',
+    'LoudPopcorn.pipelines.ProcessFilmTimes',
+]
 
